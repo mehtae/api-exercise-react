@@ -11,7 +11,7 @@ const App = () => {
     event.preventDefault();
 
     //RegExp for valid input (all letters and includes åäö with spaces, hyphens, no numbers, atleast 3 characers).
-    const validInput = /^[a-zA-ZåäöÅÄÖ]+(?:[\s-][a-zA-ZåäöÅÄÖ]+)*$/;
+    const validInput = /^[a-zA-ZåäöÅÄÖ. -]{2,}$/gm;
     if (!validInput.test(city)) {
       setCityData(null);
       setError("Please enter a valid city name.");
@@ -25,7 +25,7 @@ const App = () => {
           headers: {
             "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
             "x-rapidapi-key":
-              "API_KEY HERE",
+              "API_KEY_HERE",
           },
         }
       );
