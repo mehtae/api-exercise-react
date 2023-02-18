@@ -10,7 +10,7 @@ const App = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    //RegExp for valid input (all letters and includes åäö with spaces, hyphens, no numbers, atleast 3 characers).
+    //RegExp for valid input (all letters and includes åäö with spaces, hyphens, dots, no numbers, atleast 3 characers).
     const validInput = /^[a-zA-ZåäöÅÄÖ. -]{2,}$/gm;
     if (!validInput.test(city)) {
       setCityData(null);
